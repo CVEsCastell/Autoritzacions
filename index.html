@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Consentimiento</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form id="consentForm">
+            <div class="dades mb-5">
+                <h1>Formulari de Consentiment</h1>
+                <h3>Dades del Pare/Mare/Tutor</h3>
+                <div class="row">
+                    <div class="col-12 col-md-8 mb-2">
+                        <div>Nom i llinatges*</div>
+                        <input class="form-control type=" text" id="nombre" name="nombrePadre" required>
+                    </div>
+                    <div class="col-12  col-md-4 mb-2">
+                        <div>DNI*</div>
+                        <input class="form-control" type="text" id="dni" name="dni" required>
+                    </div>
+                    <div class="col-12 col-md-6 mb-2">
+                        <div>Teléfon*</div>
+                        <input class="form-control" type="tel" id="telefon" name="telefon" pattern="[0-9]{9}" required>
+                    </div>
+                    <div class="col-12 col-md-6 mb-2">
+                        <div>Email*</div>
+                        <input class="form-control" type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <h3 class="mt-3">Dades del/de la jugador/jugadora</h3>
+                <div class="row">
+                    <div class="col-12 col-md-8 mb-2">
+                        <div>Nom i llinatges*</div>
+                        <input class="form-control type=" text" id="nombreJugador" name="nombrePadre" required>
+                    </div>
+                    <div class="col-12  col-md-4 mb-2">
+                        <div>DNI*</div>
+                        <input class="form-control" type="text" id="dniJugador" name="dni" required>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2">
+                        <div>Teléfon*</div>
+                        <input class="form-control" type="tel" id="telefonJugador" name="telefon" pattern="[0-9]{9}"
+                            required>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2">
+                        <div>Email*</div>
+                        <input class="form-control" type="email" id="emailJugador" name="email" required>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2">
+                        <div>Categoria*</div>
+                        <select class="form-control" id="categoria">
+                            <option value="infantil">Infantil</option>
+                            <option value="cadet">Cadet</option>
+                            <option value="juvenil">juvenil</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="autoritzacions">
+                <h2 class="mt-3">AUTORITZACIONS CLUB VOLEI ES CASTELL TEMPORADA 24-25</h2>
+                <div class="mb-4">
+                    Jo, el/la Sr/Sra. <span class="bold" id="np1"></span>, amb DNI <span class="bold" id="dp1"></span>, pare/mare/tutor-a legal del/de la
+                        jugador/a <span class="bold" id="nj1"></span> de l'equip de categoria <span class="bold" id="cj"></span>
+                            (ESCOLETA/INFANTIL/CADET/JUVENIL/2ª FEMENINA/1ª MASCULINA) del Club Volei Es Castell,
+                            empleno
+                            les següents autoritzacions perquè tenguin validesa durant la temporada 2024-2025:
+                </div>
+                <div class="autoritzacio autoritzacio_1 mb-4">
+                    <h3>
+                        1. REGLAMENT DE RÈGIM INTERN:
+                    </h3>
+                    <div class="row">
+
+                        <div class="col-12 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <span class="form-check-label" for="flexCheckDefault">
+                                    ACCEPT, després d’haver-la llegida, la NORMATIVA DE FUNCIONAMENT del Club (còpia
+                                    adjunta).
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="autoritzacio autoritzacio_2 mb-4">
+                    <h3>
+                        2. AUTORITZACIÓ D'IMATGE:
+                    </h3>
+                    <div class="mb-3 bold">
+                        <div class="form-check-2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2"
+                                id="flexRadioDefault1">
+                            <span class="form-check-label" for="flexRadioDefault1">
+                                AUTORITZO
+                            </span>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2"
+                                checked>
+                            <span class="form-check-label" for="flexRadioDefault2">
+                                NO AUTORITZO
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" mb-2">
+
+                        A el Club perquè publiqui fotos i vídeos tant al Facebook del Club, com a
+                        l'Instagram del Club, com a la premsa i/o a la televisió si fos el cas. Esteim assabentats com a
+                        família
+                        de
+                        l'article 18 de la Constitució i regulat per la Llei 1/1982 del 5 de maig sobre l'honor a la
+                        intimitat
+                        personal i famliliar i a la pròpia imatge i al Reglament (UE) 2016/679 del Parlament Europeu i
+                        del
+                        Consell
+                        de 27 d'abril de 2016 sobre la Protecció de Dades de Caràcter Personal.
+                    </div>
+                </div>
+                <div class="autoritzacio autoritzacio_3 mb-4">
+                    <h3>
+                        3. AUTORITZACIÓ DE DESPLAÇAMENT – COMPROMÍS DE CONDUCTOR:
+                    </h3>
+
+
+                    <div class="mb-4 bold">
+                        <div class="form-check-3">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault3"
+                                id="flexRadioDefault1">
+                            <span class="form-check-label" for="flexRadioDefault1">
+                                AUTORITZO
+                            </span>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2"
+                                checked>
+                            <span class="form-check-label" for="flexRadioDefault2">
+                                NO AUTORITZO
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        A el/la meu/meva fill/a a desplaçar-se als entrenaments, partits amistosos i
+                        oficials, diades o qualsevol altre event organitzat pel club amb transport públic o vehicles
+                        propis
+                        d'entrenadors i/o de familiars de companys/es d'equip, sempre que no ho pugui fer jo
+                        personalment
+                        com a
+                        família.
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="ccoche">
+                                <span class="form-check-label" for="flexCheckDefault">
+                                    També declar que quan faci desplaçaments amb el meu propi vehicle familiar, aquest
+                                    compleix
+                                    totes les
+                                    condicions legals requerides per circular (assegurança, ITV...), a més de complir
+                                    amb
+                                    tots
+                                    els requisits
+                                    exigits per la llei per poder conduir el vehicle (permís de conducció vigent,
+                                    condicions
+                                    físiques i
+                                    psicològiques òptimes, etc).
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="ccoche">
+                                <span class="form-check-label" for="flexCheckDefault">
+                                    A més, eximeix de qualsevol responsabilitat el conductor del vehicle que acompanyi
+                                    el/la
+                                    meu/meva fill/a quan nosaltres com a família no puguem dur-lo/la amb el nostre
+                                    vehicle
+                                    propi, sempre que aquest acompleixi amb els requisitis anteriorment citats.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="ccoche">
+                                <span class="form-check-label" for="flexCheckDefault">
+                                    En el cas que el/la meu/meva fill/a formi part dels grups juvenils, eximeix de
+                                    qualsevol
+                                    responsabilitat als
+                                    entrenadors i/o acompanyants si el/la meu/meva fill/a no es comporta correctament i
+                                    crea
+                                    una
+                                    situació
+                                    problemàtica i accept que el club prengui mesures de cara a posteriors viatges i/o
+                                    desplaçaments.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="autoritzacio autoritzacio_4 mb-4">
+                    <h3>
+                        4. COMPLIMENT DEL REGLAMENT (UE) 2016/679 DEL PARLAMENT EUROPEU I DEL CONSELL, DE 27 D'ABRIL DE
+                        2016
+                        RELATIU
+                        A LA PROTECCIÓ DE LES PERSONES FÍSIQUES EN RELACIÓ AL TRACTAMENT DE DADES PERSONALS I A LA
+                        LLIURE
+                        CIRCULACIÓ
+                        D’AQUESTES DADES
+                    </h3>
+                    <ol>
+                        <li>
+                            En compliment del Reglament (UE) 2016/679, les dades facilitades per vostè seran
+                            incorporades a
+                            un fitxer
+                            de titularitat privada corresponent al Club Voleibol Es Castell.
+                        </li>
+                        <li>
+                            Únicament es sol·liciten les dades estrictament necessàries per al desenvolupament de les
+                            activitats
+                            pròpies del Club Volei Es Castell (inscripció a competicions esportives oficials i no
+                            oficials,
+                            tramitació
+                            de documentació a la Federació Autonòmica i Nacional, tramitació de mutualitats assegurances
+                            obligatòries,
+                            organització de desplaçaments, etc).
+                        </li>
+                        <li>
+                            Únicament es cedeixen a tercers les dades necessàries per a la tramitació administrativa de
+                            les
+                            competicions esportives oficials en les que participi el Club Volei Es Castell, així com de
+                            les
+                            mutualitats
+                            i assegurances obligatòries. En cap cas es cediran les dades facilitades a tercers amb
+                            qualsevol
+                            altra
+                            finalitat.
+                        </li>
+                        <li>
+                            Un cop finalitzada la relació entre el Club Volei Es Castell i vostè, les dades seran
+                            arxivades
+                            i
+                            conservades durant el període mínim que dicti la normativa vigent.
+                        </li>
+                        <li>
+                            El Club Volei Es Castell li comunica que té dret a sol·licitar la rectificació o supressió
+                            de
+                            dades
+                            personals o la limitació del tractament de les seves dades personals, o a oposar-se a aquest
+                            tractament,
+                            així com a presentar una reclamació davant una autoritat de control.
+                        </li>
+                    </ol>
+
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="ccoche">
+                                <span class="form-check-label" for="flexCheckDefault">
+                                    MANIFEST la meva conformitat amb el tractament de les dades personals facilitades al
+                                    Club
+                                    Volei Es Castell
+                                    en els termes que s’especifiquen en aquest document.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="autoritzacio autoritzacio_5 mb-4">
+                    I perquè tengui validesa, signo aquest document a Es Castell, a <span class="bold" id="fecha-firma"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 mb-2">
+                        <div for="firma">Firma tutor:</div>
+                        <canvas id="signature-pad" width="650" height="250"
+                            style="border:1px solid #000;"></canvas><br><br>
+                    </div>
+                    <div class="col-12 mb-2 no-imprimir">
+                        <button class="btn btn-danger" type="button" id="clear">Borrar Firma</button>
+                        <button class="btn btn-primary" id="save">Guardar como PDF</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
