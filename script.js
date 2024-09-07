@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var canvas = document.getElementById('signature-pad');
     var nombre = document.getElementById('nombre');
     var nombreJugador = document.getElementById('nombreJugador');
     var dni = document.getElementById('dni');
     var dniJugador = document.getElementById('dniJugador');
+    var canvas = document.getElementById('signature-pad');
     var ctx = canvas.getContext('2d');
     var clearButton = document.getElementById('clear');
     var saveButton = document.getElementById('save');
     var drawing = false;
+
+    function getTouchPos(canvasDom, touchEvent) {
+        var rect = canvasDom.getBoundingClientRect();
+        return {
+            x: touchEvent.touches[0].clientX - rect.left,
+            y: touchEvent.touches[0].clientY - rect.top
+        };
+    }
 
     canvas.addEventListener('mousedown', function (e) {
         drawing = true;
@@ -26,15 +34,35 @@ document.addEventListener('DOMContentLoaded', function () {
         drawing = false;
     });
 
+    canvas.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+        var touchPos = getTouchPos(canvas, e);
+        drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(touchPos.x, touchPos.y);
+    });
+
+    canvas.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+        if (drawing) {
+            var touchPos = getTouchPos(canvas, e);
+            ctx.lineTo(touchPos.x, touchPos.y);
+            ctx.stroke();
+        }
+    });
+
+    canvas.addEventListener('touchend', function () {
+        drawing = false;
+    });
+
     clearButton.addEventListener('click', function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
 
     saveButton.addEventListener('click', function () {
-        var form = document.getElementById('consentForm');
-        window.print();
+              window.print();
     });
-
+   
     nombre.addEventListener('change', function(){
         
         var contenido = document.getElementById('nombre').value;
