@@ -59,8 +59,21 @@ document.addEventListener('DOMContentLoaded', function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
 
-    saveButton.addEventListener('click', function () {
-              window.print();
+    saveButton.addEventListener('click', function (body) {
+              //window.print();
+              var element = document.body;
+
+              // Configuración de opciones
+              var opt = {
+                margin:       1,
+                filename:     'Autoritzacio_'+ document.getElementById('nombreJugador').value +'.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+              };
+              
+              // Convierte el cuerpo del documento a PDF
+              html2pdf().set(opt).from(element).save();
     });
    
     nombre.addEventListener('change', function(){
