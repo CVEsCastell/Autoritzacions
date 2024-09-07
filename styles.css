@@ -1,13 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-.ubuntu-regular {
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
+    margin: 20px;
+    background-color:  rgba(254, 167, 38, 0.2);
+}
+.ubuntu-regular {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}  
 form {
     margin: auto;
 }
@@ -32,6 +34,7 @@ button {
     padding: 10px 20px;
     cursor: pointer;
 }
+
 @media print {
     .no-imprimir {
         display: none;

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var canvas = document.getElementById('signature-pad');
     var ctx = canvas.getContext('2d');
     var clearButton = document.getElementById('clear');
-    var saveButton = document.getElementById('save');
+    var saveButton = document.getElementById('download');
     var drawing = false;
 
     function getTouchPos(canvasDom, touchEvent) {
