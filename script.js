@@ -72,8 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
               };
               
-              // Convierte el cuerpo del documento a PDF
-              html2pdf().set(opt).from(element).save();
+              if (validarFormulario()) {
+                  // Convierte el cuerpo del documento a PDF
+                  html2pdf().set(opt).from(element).save();
+                }
     });
    
     nombre.addEventListener('change', function(){
@@ -95,6 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var contenido = document.getElementById('dniJugador').value;
         document.getElementById('dj1').textContent = contenido;
     });
+    document.getElementById('categoria').addEventListener('change', function() {
+        const selectedValue = this.value;
+        document.getElementById('cj').textContent = selectedValue;
+    });
 
 
     var fechaActual = new Date();
@@ -112,6 +118,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Insertar la fecha en el span con id "fecha-firma"
     document.getElementById('fecha-firma').textContent = fechaFormateada;
+
+    function validarFormulario() {
+        // Obtener todos los inputs del formulario
+        const inputs = document.querySelectorAll('input[required], select[required]');
+        
+        // Recorrer todos los inputs y comprobar si tienen valor
+        for (let input of inputs) {
+            if (!input.value.trim()) {
+                alert(`Falta informació a: ${input.previousElementSibling.textContent}`);
+                input.focus();
+                return false;
+            }
+        }
+
+        const canvas = document.getElementById('signature-pad');
+        if (isCanvasEmpty(canvas)) {
+            alert('Falta firmar el document.');
+            canvas.focus();
+            return false;
+        }
+        
+        // Si todos los campos están rellenados, devolver true
+        return true;
+    }
+
+    function isCanvasEmpty(canvas) {
+        const context = canvas.getContext('2d');
+        const pixelBuffer = new Uint32Array(
+            context.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+        );
+    
+        return !pixelBuffer.some(color => color !== 0);
+    }
 
 
 });

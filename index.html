@@ -28,7 +28,7 @@
 
 <body>
     <div class="container">
-        <form id="consentForm">
+        <div id="consentForm">
             <div class="dades mb-5">
                 <h1>Formulari de Consentiment</h1>
                 <h3>Dades del Pare/Mare/Tutor</h3>
@@ -72,9 +72,10 @@
                     <div class="col-12 col-md-4 mb-2">
                         <div>Categoria*</div>
                         <select class="form-control" id="categoria">
+                            <option value="escoleta">Escoleta</option>
                             <option value="infantil">Infantil</option>
                             <option value="cadet">Cadet</option>
-                            <option value="juvenil">juvenil</option>
+                            <option value="juvenil">Juvenil</option>
                             <option value="senior">Senior</option>
                         </select>
                     </div>
@@ -88,8 +89,8 @@
                     Jo, el/la Sr/Sra. <span class="bold" id="np1"></span>, amb DNI <span class="bold" id="dp1"></span>,
                     pare/mare/tutor-a legal del/de la
                     jugador/a <span class="bold" id="nj1"></span> de l'equip de categoria <span class="bold"
-                        id="cj"></span>
-                    (ESCOLETA/INFANTIL/CADET/JUVENIL/2ª FEMENINA/1ª MASCULINA) del Club Volei Es Castell,
+                        id="cj">escoleta</span>
+                    del Club Volei Es Castell,
                     empleno
                     les següents autoritzacions perquè tenguin validesa durant la temporada 2024-2025:
                 </div>
@@ -312,7 +313,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
 
         <h3 class="no-imprimir my-5">
             Una vez guardado el PDF, se tiene que enviar a <a href="mailto:cv.escastell@gmail.com&subject=Autoritzacio" target="_blank" >
