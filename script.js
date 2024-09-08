@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var nombreJugador = document.getElementById('nombreJugador');
     var dni = document.getElementById('dni');
     var dniJugador = document.getElementById('dniJugador');
+    var email = document.getElementById('email');
+    var emailJugador = document.getElementById('emailJugador');
+    var telefon = document.getElementById('telefon');
+    var telefonJugador = document.getElementById('telefonJugador');
     var canvas = document.getElementById('signature-pad');
     var ctx = canvas.getContext('2d');
     var clearButton = document.getElementById('clear');
@@ -73,10 +77,23 @@ document.addEventListener('DOMContentLoaded', function () {
               };
               
               if (validarFormulario()) {
+                
+              toggleVisibility('dades-form');
+              toggleVisibility('botoneras');
+              toggleVisibility('links');
                   // Convierte el cuerpo del documento a PDF
                   html2pdf().set(opt).from(element).save();
                 }
+
     });
+    function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains('d-none')) {
+            element.classList.remove('d-none');
+        } else {
+            element.classList.add('d-none');
+        }
+    }
    
     nombre.addEventListener('change', function(){
         
@@ -91,11 +108,32 @@ document.addEventListener('DOMContentLoaded', function () {
         
         var contenido = document.getElementById('dni').value;
         document.getElementById('dp1').textContent = contenido;
+        document.getElementById('dp-2').textContent = contenido;
         
     });
     dniJugador.addEventListener('change', function(){
         var contenido = document.getElementById('dniJugador').value;
-        document.getElementById('dj1').textContent = contenido;
+        document.getElementById('dj-2').textContent = contenido;
+    });
+    email.addEventListener('change', function(){
+        
+        var contenido = document.getElementById('email').value;
+        document.getElementById('ep-2').textContent = contenido;
+        
+    });
+    emailJugador.addEventListener('change', function(){
+        var contenido = document.getElementById('emailJugador').value;
+        document.getElementById('ej-2').textContent = contenido;
+    });
+    telefon.addEventListener('change', function(){
+        
+        var contenido = document.getElementById('telefon').value;
+        document.getElementById('tp-2').textContent = contenido;
+        
+    });
+    telefonJugador.addEventListener('change', function(){
+        var contenido = document.getElementById('telefonJugador').value;
+        document.getElementById('tj-2').textContent = contenido;
     });
     document.getElementById('categoria').addEventListener('change', function() {
         const selectedValue = this.value;

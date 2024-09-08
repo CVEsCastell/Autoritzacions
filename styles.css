@@ -3,7 +3,7 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 20px;
-    background-color:  rgba(254, 167, 38, 0.2) !important;
+    background-color:  rgba(254, 167, 38, 0.1) !important;
 }
 .ubuntu-regular {
     font-family: "Ubuntu", system-ui;
@@ -41,6 +41,10 @@ canvas{
     background: white;
 }
 @media print {
+    body{
+        background: white !important;
+    }
+    
     .no-imprimir {
         display: none;
     }
